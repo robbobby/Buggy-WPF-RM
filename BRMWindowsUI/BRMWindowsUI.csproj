@@ -82,7 +82,10 @@
     </ApplicationDefinition>
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Helpers\ApiHelper.cs" />
+    <Compile Include="Helpers\Console.cs" />
+    <Compile Include="Helpers\IApiHelper.cs" />
     <Compile Include="Helpers\PasswordBoxHelper.cs" />
+    <Compile Include="Models\AuthenticatedUser.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="App.xaml.cs">
@@ -126,9 +129,6 @@
   <ItemGroup>
     <Page Include="Views\LoginView.xaml" />
     <Page Include="Views\ShellView.xaml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

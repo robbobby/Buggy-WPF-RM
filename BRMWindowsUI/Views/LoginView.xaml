@@ -8,7 +8,7 @@
              Background="#1E1E1E" 
              Foreground="#978106" 
              d:DesignHeight="425" d:DesignWidth="800">
-    <Grid>
+    <Grid >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="auto"/>
@@ -30,12 +30,14 @@
                         <!-- UserName -->
         <TextBlock Grid.Row="1" Grid.Column="1"
                    Text="Username"/>
-        <TextBox x:Name="UserName" Grid.Row="1" Grid.Column="2" Background="#383838" Margin="0,0,0,10"/>
+        <TextBox x:Name="UserName" Foreground="#978106" FontSize="25"
+                 Grid.Row="1" Grid.Column="2" Background="#383838" Margin="0,0,0,10"/>
         
                         <!-- Password -->
         <TextBlock Grid.Row="2" Grid.Column="1"
                    Text="Password"/>
-        <PasswordBox x:Name="Password" Grid.Row="2" Grid.Column="2" Background="#383838" Margin="0,0,0,10"/>
+        <PasswordBox x:Name="Password" Foreground="#978106" FontSize="25"
+                     Grid.Row="2" Grid.Column="2" Background="#383838" Margin="0,0,0,10"/>
         
                         <!-- Login row -->
         <Button Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center"
