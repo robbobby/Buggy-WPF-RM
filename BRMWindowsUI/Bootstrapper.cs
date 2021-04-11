@@ -2,16 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
 using BRMWindowsUI.ViewModels;
 using Caliburn.Micro;
 
 namespace BRMWindowsUI {
     public class Bootstrapper : BootstrapperBase {
         private SimpleContainer _container = new SimpleContainer();
-        public Bootstrapper(){
+        public Bootstrapper() {
             Initialize();
+            InitialisePasswordBox();
         }
+        private static void InitialisePasswordBox() {
 
+            ConventionManager.AddElementConvention<PasswordBox>(
+                PasswordBoxHelper.BoundPasswordProperty,
+                "Password",
+                "PasswordChanged");
+        }
+        
         protected override void Configure() {
             _container.Instance(_container);
             _container.Singleton<IWindowManager, WindowManager>()
