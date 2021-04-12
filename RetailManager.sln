@@ -9,6 +9,10 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BRMData", "BRMData\BRMData.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BRMWindowsUI", "BRMWindowsUI\BRMWindowsUI.csproj", "{573BBAFA-9602-462C-9AC4-165F0803734A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BRMDataManager.Library", "BRMDataManager.Library\BRMDataManager.Library.csproj", "{FCECB698-147E-4D5F-9608-EC9C375824FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BRMFrontEnd.Library", "BRMFrontEnd.Library\BRMFrontEnd.Library.csproj", "{0078A135-8F60-4184-A092-64E6E82B9A96}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,14 @@ Global
 		{573BBAFA-9602-462C-9AC4-165F0803734A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{573BBAFA-9602-462C-9AC4-165F0803734A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{573BBAFA-9602-462C-9AC4-165F0803734A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCECB698-147E-4D5F-9608-EC9C375824FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCECB698-147E-4D5F-9608-EC9C375824FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCECB698-147E-4D5F-9608-EC9C375824FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCECB698-147E-4D5F-9608-EC9C375824FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0078A135-8F60-4184-A092-64E6E82B9A96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0078A135-8F60-4184-A092-64E6E82B9A96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0078A135-8F60-4184-A092-64E6E82B9A96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0078A135-8F60-4184-A092-64E6E82B9A96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

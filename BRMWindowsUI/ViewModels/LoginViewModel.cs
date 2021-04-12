@@ -1,19 +1,24 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Threading.Tasks;
-using System.Windows.Controls;
-using BRMWindowsUI.Helpers;
+using BRMFrontEnd.Library.Api;
+using BRMFrontEnd.Library.Models.ModelInterfaces;
+using BRMWindowsUI.Models;
 using Caliburn.Micro;
+
 namespace BRMWindowsUI.ViewModels {
     public class LoginViewModel : Screen {
         private string _userName;
         private string _password;
+        public string _errorMessage;
+        
         private IApiHelper _apiHelper;
-        
-        public LoginViewModel(IApiHelper apiHelper) {
+        private readonly ILoggedInUserModel _loggedInUser;
+
+        public LoginViewModel(IApiHelper apiHelper, ILoggedInUserModel loggedInUser) {
             _apiHelper = apiHelper;
+            _loggedInUser = loggedInUser;
         }
-        
+
         public string UserName {
             get => _userName;
             set {
@@ -22,6 +27,16 @@ namespace BRMWindowsUI.ViewModels {
                 NotifyOfPropertyChange(() => CanLogin);
             }
     }
+        public bool IsErrorVisible => ErrorMessage.Length > 0;
+        
+        public string ErrorMessage {
+            get => _errorMessage;
+            set {
+                _errorMessage = value;
+                NotifyOfPropertyChange(() => IsErrorVisible);
+                NotifyOfPropertyChange(() => ErrorMessage);
+            }
+        }
 
 
         public string Password {
@@ -43,13 +58,13 @@ namespace BRMWindowsUI.ViewModels {
         }
 
         public async Task Login(string userName, string password) {
+            ErrorMessage = "";
             try {
-                var result = await _apiHelper.Authenticate(UserName, Password);
-                Trace.WriteLine(result.Access_Token);
+                AuthenticatedUser result = await _apiHelper.Authenticate(UserName, Password);
+                await _apiHelper.GetAndSetLoggedInUserInfo(result.Access_Token);
+                ErrorMessage = _loggedInUser.Id;
             } catch(Exception e) {
-                Trace.WriteLine("Hello there");
-                Trace.WriteLine(e.Message);
-                Console.WriteLine(e.Message);
+                ErrorMessage = e.Message;
             }
             
         }

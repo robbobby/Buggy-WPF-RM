@@ -1,8 +1,8 @@
-﻿using System.Net.Http;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using BRMWindowsUI.Models;
-namespace BRMWindowsUI.Helpers {
+namespace BRMFrontEnd.Library.Api {
     public interface IApiHelper {
         Task<AuthenticatedUser> Authenticate(string userName, string password);
+        Task GetAndSetLoggedInUserInfo(string token);
     }
 }

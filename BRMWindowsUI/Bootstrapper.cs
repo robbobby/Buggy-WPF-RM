@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using BRMWindowsUI.Helpers;
+using BRMFrontEnd.Library.Api;
+using BRMFrontEnd.Library.Models;
+using BRMFrontEnd.Library.Models.ModelInterfaces;
 using BRMWindowsUI.ViewModels;
 using Caliburn.Micro;
 
@@ -26,7 +28,8 @@ namespace BRMWindowsUI {
             _container.Instance(_container);
             _container.Singleton<IWindowManager, WindowManager>()
                       .Singleton<IEventAggregator, EventAggregator>()
-                      .Singleton<IApiHelper, ApiHelper>();
+                      .Singleton<IApiHelper, ApiHelper>()
+                      .Singleton<ILoggedInUserModel, LoggedInUserModel>();
             
             GetType().Assembly.GetTypes()
                 .Where(type => type.IsClass)

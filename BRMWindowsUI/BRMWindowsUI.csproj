@@ -81,11 +81,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="Helpers\ApiHelper.cs" />
     <Compile Include="Helpers\Console.cs" />
-    <Compile Include="Helpers\IApiHelper.cs" />
     <Compile Include="Helpers\PasswordBoxHelper.cs" />
-    <Compile Include="Models\AuthenticatedUser.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="App.xaml.cs">
@@ -129,6 +126,15 @@
   <ItemGroup>
     <Page Include="Views\LoginView.xaml" />
     <Page Include="Views\ShellView.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BRMFrontEnd.Library\BRMFrontEnd.Library.csproj">
+      <Project>{0078a135-8f60-4184-a092-64e6e82b9a96}</Project>
+      <Name>BRMFrontEnd.Library</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
